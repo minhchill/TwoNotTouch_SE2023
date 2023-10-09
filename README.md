@@ -11,13 +11,18 @@ STRATEGIES:
 - Same star-placing pattern for 3-grid region, 3x2 L shape (1 unknown), 3x3 rectangle (2 unknown), T shape, Z-ish, 
 - Eliminate spots that cannot have a star (3-grid column, potential adjacent/tangent to star zone, a spot that would not permit 2 stars at once)
 
-USER STORIES:
+USER STORIES: (Violation of criteria for winning)
 1. User supplies a blank grid 
    - Return error message if the grid does not follow layout rules
-   - Print out the solution
-2. User supplies a solved puzzle
-   - Return "The solution is incorrect" and point out where for incorrect solution
+
+2. User supplies a correctly solved puzzle file 
    - Return "You solved it!" for correct solution
+
+3. User supplies an incorrect solution 
+   - Return "The solution is incorrect" and point out where for incorrect solution
+
+4. User supplies a blank grid that matches layout requirement
+   - Print out the correct solution
   
 Player stories (Based on the mobile game):
 - Start a new game
