@@ -35,6 +35,7 @@ FUNTIONS:
 - **Driver:** Take file input and return according message
 - **checkGrid:** Scan the grid based on layout criteria
 - **checkSolution:** Scan the grid based on the given criteria, detect any violations (# other than 2 stars)
+- **defineIrregulars:** Keep tab of 10 irregular regions
 - **placeStar:** Put a star in a designated grid, cross off the adjacent/tangent grids with x
 - **fillBlank:** Scan for rows/columns/regions with 2 blank grid (not adjacent to each other to fill in stars or x accordingly
 - **fillX:** Scan for rows/columns/regions with 2 stars to fill x in the rest
