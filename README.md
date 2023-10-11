@@ -37,6 +37,8 @@ FUNTIONS:
 - **checkSolution:** Scan the grid based on the given criteria, detect any violations (# other than 2 stars)
 - **placeStar:** Put a star in a designated grid, cross off the adjacent/tangent grids with x
 - **fillBlank:** Scan for rows/columns/regions with 2 blank grid (not adjacent to each other to fill in stars or x accordingly
+- **fillX:** Scan for rows/columns/regions with 2 stars to fill x in the rest
+- **fillX2:** Scan for 2-grid with a possibility to have a star and cross of the column/row before and after it
 
 UI IDEA:
 
