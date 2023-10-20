@@ -39,6 +39,8 @@ bool isGrid10x10(const std::string& filename)
 
     // Read the grid from the input file
     while (std::getline(input, line)) {
+        //remove each newline character from end of line
+        line.erase('\n');
         grid.push_back(line);
     }
 
