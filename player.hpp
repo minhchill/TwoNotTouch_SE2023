@@ -12,4 +12,8 @@ public:
 
 //Set a Getter for player's name and score.
 
+    std::string getName() const {
+        return name;
+    }
+
 //Keep incrementing the player's score and keep tracks of the move by the players.
