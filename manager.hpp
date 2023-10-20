@@ -26,8 +26,7 @@ Check
 */
 
 // If grid is not 10 x 10, return error/false
-bool isGrid10x10(const std::string& filename)
-{
+bool isGrid10x10(const std::string& filename) {
     std::ifstream input(filename);
     if (!input) {
         std::cerr << "Error: Cannot open input file." << std::endl;
@@ -63,13 +62,14 @@ bool isGrid10x10(const std::string& filename)
 }
 
 // If grid contains < 100 characters, return error
-bool isGridcharlegal(const std::string& filename)
-{
+bool isGridcharlegal(const std::string& filename) {
     return true;
 }
 
 // If grid meets all the requirement, begin evaluating to either solve it or to verify it
-void toSolveorVerify()
+void toSolveorVerify() {
+    
+}
 
 
 
