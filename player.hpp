@@ -16,4 +16,8 @@ public:
         return name;
     }
 
+    int getScore() const {
+        return score;
+    }
+
 //Keep incrementing the player's score and keep tracks of the move by the players.
