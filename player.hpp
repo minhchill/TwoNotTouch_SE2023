@@ -21,3 +21,7 @@ public:
     }
 
 //Keep incrementing the player's score and keep tracks of the move by the players.
+
+    void updatedScore(int points) {
+        score += points;
+    }
