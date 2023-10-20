@@ -1,6 +1,10 @@
+#include <iostream>
 // Include the Board class header
 
-//Class Player
+class Player {
+private:
+    std::string name;
+    int score;
 
 //Set a Getter for player's name and score.
 
