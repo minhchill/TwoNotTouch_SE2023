@@ -63,7 +63,7 @@ bool isGrid10x10(const std::string& filename)
 }
 
 // If grid contains < 100 characters, return error
-boo isGridcharlegal(const std::string& filename)
+bool isGridcharlegal(const std::string& filename)
 {
     return true;
 }
