@@ -38,8 +38,6 @@ bool isGrid10x10(const std::string& filename) {
 
     // Read the grid from the input file
     while (std::getline(input, line)) {
-        //remove each newline character from end of line
-        line.erase('\n');
         grid.push_back(line);
     }
 
@@ -50,11 +48,34 @@ bool isGrid10x10(const std::string& filename) {
     }
 
     // Check if each row has 10 columns
+    //i hate length()
+    int acc = 1;
     for (const std::string& row : grid) {
-        if (row.size() != 10) {
+
+        //check the last row first because this solution is dumb
+        std::string& lastRow = grid[9];
+        if (lastRow.length() == 11) {
             std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
             return false;
         }
+        
+        //for debug
+        //std::cout << row.length() << std::endl;
+
+        //since last row is the correct size we can check the other rows
+        if  (row.length() != 11) {
+            if (acc != grid.size()) {
+                std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
+                return false;
+            }
+            else {
+                if (acc == grid.size() && lastRow.length() != 10) {
+                    std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
+                    return false;
+                }
+            }
+        }
+        acc++;
     }
 
     // If the grid is 10x10, it's valid

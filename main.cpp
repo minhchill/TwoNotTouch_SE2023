@@ -19,7 +19,7 @@ int main()
             //std::cout << line << '\n';
             g1.push_back(line);
         }
-        std::cout << isGridLegal("testfile.txt");
+        std::cout << isGrid10x10("testfile.txt") << std::endl;
         myfile.close();
     }    
     
