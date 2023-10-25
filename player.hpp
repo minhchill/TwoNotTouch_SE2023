@@ -29,7 +29,7 @@ public:
     // Play a move in the game
     void playMove(Board& board, int x, int y) {
         // Implement the logic to play a move on the board
-        // You can call appropriate methods from the Board class
+        // call appropriate methods from the Board class
     }
 };
 
