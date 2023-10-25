@@ -87,11 +87,25 @@ bool isGridcharlegal(const std::string& filename) {
     return true;
 }
 
-// If grid meets all the requirement, begin evaluating to either solve it or to verify it
-void toSolveorVerify() {
-    
+void solvePuzzle() {
+    std::cout << "works" << std::endl;
 }
 
+void verifyPuzzle() {
+    std::cout << "no grid" << std::endl;
+}
+
+// If grid meets all the requirement, begin evaluating to either solve it or to verify it
+void toSolveorVerify() {
+
+    if (isGrid10x10("testfile.txt") && isGridcharlegal("testfile.txt")) {
+        solvePuzzle();
+    }
+
+    else {
+        verifyPuzzle();
+    }
+}
 
 
 
