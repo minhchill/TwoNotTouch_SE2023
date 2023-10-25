@@ -35,15 +35,15 @@ public:
 
 int main() {
     // Example usage of the Player class
-    Player player1("habiba");
-    Player player2("Memo");
+    Player player1("");
+    Player player2("");
 
     // Example game loop
     Board board; // Assuming you have created a Board object
     bool gameInProgress = true;
 
     while (gameInProgress) {
-        // Get player input for the move (you can use your own logic)
+        // Get player input for the move
         int x, y;
         std::cout << "Enter the coordinates (x, y) for your move: ";
         std::cin >> x >> y;
