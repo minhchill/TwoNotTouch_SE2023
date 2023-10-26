@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <map>
 
 /* 
 SPECIFICATION
@@ -84,6 +85,24 @@ bool isGrid10x10(const std::string& filename) {
 
 // If grid contains < 100 characters, return error
 bool isGridcharlegal(const std::string& filename) {
+    std::map<char, int> map;
+    for (const std::string& row : grid) {
+
+        for (const char& i : row) {
+            if (i != '\n') {
+                map[i]++;
+            }
+        }
+    }
+    // Get an iterator pointing to the first element in the map
+    std::map<char, int>::iterator it = map.begin();
+ 
+    // Iterate through the map and print the elements
+    while (it != map.end())
+    {
+        std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+        ++it;
+    }
     return true;
 }
 
@@ -98,7 +117,7 @@ void verifyPuzzle() {
 // If grid meets all the requirement, begin evaluating to either solve it or to verify it
 void toSolveorVerify() {
 
-    if (isGrid10x10("testfile.txt") && isGridcharlegal("testfile.txt")) {
+    if (isGrid10x10("testfile.txt")) {
         solvePuzzle();
     }
 
