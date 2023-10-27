@@ -11,70 +11,15 @@
 // toSolveorVerify(): Call the isPuzzleSolved() from manager continuously. 
 
 
-class Player {
-private:
-// Minh: since the human user of this software don't see anything happening as the puzzle is solved, we don't need these variables
-    std::string name;
-    int score;
-
+class Cell {
 public:
-    Player(const std::string& playerName) : name(playerName), score(0) {
-    }
+    int x;
+    int y;
+    int container;
+    bool accessible;
+    bool hasStar;
 
-//Set a Getter for player's name and score.
-
-    std::string getName() const {
-        return name;
-    }
-
-    int getScore() const {
-        return score;
-    }
-
-//Keep incrementing the player's score and keep tracks of the move by the players.
-
-    void updatedScore(int points) {
-        score += points;
-    }
-
-    // Play a move in the game
-    void playMove(Board& board, int x, int y) {
-        // Implement the logic to play a move on the board
-        // call appropriate methods from the Board class
-    }
+    Cell(int x, int y, int container)
+        : x(x), y(y), container(container), accessible(true), hasStar(false) {}
 };
-
-int main() {
-    // Example usage of the Player class
-    Player player1("");
-    Player player2("");
-
-    // Example game loop
-    Board board; // Assuming you have created a Board object
-    bool gameInProgress = true;
-
-    while (gameInProgress) {
-        // Get player input for the move
-        int x, y;
-        std::cout << "Enter the coordinates (x, y) for your move: ";
-        std::cin >> x >> y;
-
-        // Perform the move
-        player1.playMove(board, x, y);
-
-    return 0;
-}
-
-// void toSolveorVerify() {
-    int i = 1;
-//     if (i = 1) {
-//         solvePuzzle();
-//     }
-
-//     else {
-//         verifyPuzzle();
-//     }
-// }
-
-
 
