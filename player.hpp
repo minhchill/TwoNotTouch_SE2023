@@ -2,7 +2,6 @@
 #include <vector>
 #include <map>
 
-// #include "manager.hpp"
 
 // Minh: IMPLEMENTATION IDEA
 // solvePuzzle(): Implement the algorithm to solve the puzzle. Parent method of starPlacing() and inaccessibleMarking()
