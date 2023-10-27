@@ -23,6 +23,8 @@ int main()
         myfile.close();
     }    
     
+    std::cout << isGridcharlegal(g1) << std::endl;
+
     std::cout << "Output of vector: " << std::endl;
     for (auto i = g1.begin(); i != g1.end(); i++)
 

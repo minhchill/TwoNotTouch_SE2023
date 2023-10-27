@@ -4,8 +4,6 @@
 #include <string>
 #include <map>
 
-using namespace std;
-
 /* Methods to have:
 loadGrid(filename): Read the input text file, which contains the initial puzzle grid, and populate the game grid based on file content.
 isGrid10x10(): check if grid is 10 x 10
@@ -18,41 +16,41 @@ isPuzzleSolved(): Check if the puzzle is solved, meaning all the rules are met a
 */
 
 // bring the isGridCharLegal up here for vectorization and mapping
-void loadGrid(const string& filename) {    
-        cout << "works" << endl;
-    }
+void loadGrid(const std::string& filename) {    
+    std::cout << "works" << std::endl;
+}
 
 // we can pass reference to the array or map contained the populated game grid for input parameter
-bool isGrid10x10(const string& filename) {
-    ifstream input(filename);
+bool isGrid10x10(const std::string& filename) {
+    std::ifstream input(filename);
     if (!input) {
-        cerr << "Error: Cannot open input file." << endl;
+        std::cerr << "Error: Cannot open input file." << std::endl;
         return false;
     }
 
-    vector<string> grid;
-    string line;
+    std::vector<std::string> grid;
+    std::string line;
 
     // Read the grid from the input file
-    while (getline(input, line)) {
+    while (std::getline(input, line)) {
         grid.push_back(line);
     }
 
     // Check if the grid has 10 rows
     if (grid.size() != 10) {
-        cerr << "Error: Grid does not have 10 rows. Submit another file" << endl;
+        std::cerr << "Error: Grid does not have 10 rows. Submit another file" << std::endl;
         return false;
     }
 
     // Check if each row has 10 columns
     //i hate length()
     int acc = 1;
-    for (const string& row : grid) {
+    for (const std::string& row : grid) {
 
         //check the last row first because this solution is dumb
-        string& lastRow = grid[9];
+        std::string& lastRow = grid[9];
         if (lastRow.length() == 11) {
-            cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << endl;
+            std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
             return false;
         }
         
@@ -62,12 +60,12 @@ bool isGrid10x10(const string& filename) {
         //since last row is the correct size we can check the other rows
         if  (row.length() != 11) {
             if (acc != grid.size()) {
-                cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << endl;
+                std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
                 return false;
             }
             else {
                 if (acc == grid.size() && lastRow.length() != 10) {
-                    cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << endl;
+                    std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
                     return false;
                 }
             }
@@ -80,9 +78,9 @@ bool isGrid10x10(const string& filename) {
 }
 
 // Some rename needed, maybe loadGrid is more appropriate which is up there
-bool isGridcharlegal(const string& filename) {
-    map<char, int> map;
-    for (const string& row : grid) {
+bool isGridcharlegal(const std::vector<std::string>& grid) {
+    std::map<char, int> map;
+    for (const std::string& row : grid) {
 
         for (const char& i : row) {
             if (i != '\n') {
@@ -91,31 +89,32 @@ bool isGridcharlegal(const string& filename) {
         }
     }
     // Get an iterator pointing to the first element in the map
-    map<char, int>::iterator it = map.begin();
+    std::map<char, int>::iterator it = map.begin();
  
     // Iterate through the map and print the elements
-    while (it != map.end())
-    {
-        cout << "Key: " << it->first << ", Value: " << it->second << endl;
+    while (it != map.end()) {
+        std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
         ++it;
     }
     return true;
 }
 
-bool isLegalRegion() {
-    cout << "Hey there" << endl;
+void isLegalRegion() {
+    std::cout << "Hey there" << std::endl;
 }
 
-bool isLegalGrid() {
-    cout << "Yo Legit" << endl;
+void isLegalGrid() {
+    std::cout << "Yo Legit" << std::endl;
 }
 
-isLegalPlacement(x, y, isStar) {
+void isLegalPlacement(int x, int y, bool isStar) {
+
 }
 
-isPuzzleSolved() {
+void isPuzzleSolved() {
     
 }
+
 
 
 
