@@ -1,8 +1,17 @@
 #include <iostream>
+using namespace std
 // Include the Board class header
+
+// Minh: IMPLEMENTATION IDEA
+// solvePuzzle(): Implement the algorithm to solve the puzzle. Parent method of starPlacing() and inaccessibleMarking()
+// starPlacing(): Using all strategies to place each of the two stars
+// inaccessibleMarking(): Using all strategies to determine inaccessible spots
+// verifySolution(): Given a solution (grid) as input, this method should check if it's a valid solution based on the game rules.
+
 
 class Player {
 private:
+// Minh: since the human user of this software don't see anything happening as the puzzle is solved, we don't need these variables
     std::string name;
     int score;
 
@@ -53,3 +62,6 @@ int main() {
 
     return 0;
 }
+
+
+
