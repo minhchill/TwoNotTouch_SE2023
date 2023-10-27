@@ -1,12 +1,13 @@
 #include <iostream>
 using namespace std
-// Include the Board class header
+
+#include <"manager.hpp">
 
 // Minh: IMPLEMENTATION IDEA
 // solvePuzzle(): Implement the algorithm to solve the puzzle. Parent method of starPlacing() and inaccessibleMarking()
 // starPlacing(): Using all strategies to place each of the two stars
 // inaccessibleMarking(): Using all strategies to determine inaccessible spots
-// verifySolution(): Given a solution (grid) as input, this method should check if it's a valid solution based on the game rules.
+// toSolveorVerify(): Call the isPuzzleSolved() from manager continuously. 
 
 
 class Player {
@@ -62,6 +63,17 @@ int main() {
 
     return 0;
 }
+
+// void toSolveorVerify() {
+    int i = 1;
+//     if (i = 1) {
+//         solvePuzzle();
+//     }
+
+//     else {
+//         verifyPuzzle();
+//     }
+// }
 
 
 
