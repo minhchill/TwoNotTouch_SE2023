@@ -6,12 +6,12 @@
 #include "manager.hpp"
 //#include "player.hpp"
 
-int main()
+int main(int argc, char* argv[])
 {  
     //open file, read contents to get puzzle
     std::ifstream myfile;
     std::string line;
-    myfile.open("testfile.txt");
+    myfile.open(argv[1]);
     std::vector<std::string> g1;
 
     if (myfile.is_open()) {
@@ -19,11 +19,17 @@ int main()
             //std::cout << line << '\n';
             g1.push_back(line);
         }
-        std::cout << isGrid10x10("testfile.txt") << std::endl;
+        std::cout << isGrid10x10(argv[1]) << std::endl;
         myfile.close();
     }    
+    else {
+        std::cerr << "Error: no file" << std::endl;
+        exit(1);
+    }
     
     std::cout << isGridcharlegal(g1) << std::endl;
+
+    defineFreebies();
 
     std::cout << "Output of vector: " << std::endl;
     for (auto i = g1.begin(); i != g1.end(); i++)
