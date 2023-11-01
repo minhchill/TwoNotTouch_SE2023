@@ -5,4 +5,4 @@ main.o: main.cpp
 	g++ -c main.cpp
 
 clean:
-	rm main.o output
+	rm main.o output a.out
