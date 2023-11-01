@@ -15,6 +15,12 @@ isLegalPlacement(x, y, isStar): Given the coordinates (x, y) and whether you wan
 isPuzzleSolved(): Check if the puzzle is solved, meaning all the rules are met and the puzzle is complete.
 */
 
+//placeholder until using class Cell
+struct placeholderCell {
+    int x;
+    int y;
+};
+
 // bring the isGridCharLegal up here for vectorization and mapping
 void loadGrid(const std::string& filename) {    
     std::cout << "works" << std::endl;
@@ -113,6 +119,29 @@ void isLegalPlacement(int x, int y, bool isStar) {
 
 void isPuzzleSolved() {
     
+}
+
+//to place stars
+char change_case(char c) {
+    if (std::isupper(c)) 
+        return std::tolower(c); 
+    else
+        return std::toupper(c); 
+}
+
+void placeStar(int x, int y, std::vector<std::string>& grid) {
+    //std::cout << grid[x][y] << std::endl;
+    grid[x][y] = change_case(grid[x][y]);
+}
+
+void defineFreebies() {
+    std::vector<placeholderCell> threeStrip;
+    for (size_t i = 0; i > 3; i++) {
+        placeholderCell newCell;
+        newCell.x = i;
+        newCell.y = 0;
+        threeStrip.push_back(newCell);
+    }
 }
 
 
