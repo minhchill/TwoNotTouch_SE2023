@@ -134,16 +134,108 @@ void placeStar(int x, int y, std::vector<std::string>& grid) {
     grid[x][y] = change_case(grid[x][y]);
 }
 
+//overload operator to output vector
+std::ostream& operator<<(std::ostream& os, const placeholderCell& cell) {
+    os << "x coordinate: " << cell.x << std::endl << "y coordinate: " << cell.y << std::endl;
+    return os;
+}
+
+template<typename T>
+void show(const T& container) {
+    for(const auto& item : container) {
+        std::cout<<item<<std::endl;
+    }
+}
+
+/*
+//use this to get shapes of given text input
+std::vector<std::vector<placeholderCell>> getShapes(std::vector<std::string>& grid) {
+    //create vector(s)
+    std::vector<std::vector<placeholderCell>> shapes;
+
+    std::vector<placeholderCell> A;
+    std::vector<placeholderCell> B;
+    std::vector<placeholderCell> C;
+    std::vector<placeholderCell> D;
+    std::vector<placeholderCell> E;
+    std::vector<placeholderCell> F;
+    std::vector<placeholderCell> G;
+    std::vector<placeholderCell> H;
+    std::vector<placeholderCell> I;
+    std::vector<placeholderCell> J;
+    
+    //???
+    for (std::string& row : grid) {
+
+        
+        for (char& i : row) {
+            switch(i) {
+                case 'J': {
+                    placeholderCell newCell;
+                    newCell.x = i;
+                    J.push_back()
+                    break;
+                }
+                case 'j': {
+                    break;
+                }
+
+                
+            }
+        }
+    }
+
+    // (y)
+    return shapes;
+}
+*/
+
 void defineFreebies() {
+    //three strip
     std::vector<placeholderCell> threeStrip;
-    for (size_t i = 0; i > 3; i++) {
+    for (size_t i = 0; i < 3; i++) {
         placeholderCell newCell;
         newCell.x = i;
         newCell.y = 0;
         threeStrip.push_back(newCell);
     }
+
+    std::cout << "Three Strip: " << std::endl;
+    show(threeStrip);
+
+    //tetromino t
+    std::vector<placeholderCell> tetrominoT;
+    for (size_t i = 0; i < 3; i++) {
+        placeholderCell newCell;
+        newCell.x = i;
+        newCell.y = 0;
+        tetrominoT.push_back(newCell);
+    }
+
+    placeholderCell newCell;
+    newCell.x = 1;
+    newCell.y = 1;
+    tetrominoT.push_back(newCell);
+
+    std::cout << "Tetromino T: " << std::endl;
+    show(tetrominoT);
+
+    //tetromino z
+
+    //tetromino l
+    std::vector<placeholderCell> tetrominoL;
+    for (size_t i = 0; i < 3; i++) {
+        placeholderCell newCell;
+        newCell.x = i;
+        newCell.y = 1;
+        tetrominoL.push_back(newCell);
+    }
+    newCell.x = 2;
+    newCell.y = 0;
+    tetrominoL.push_back(newCell);
+    std::cout << "Tetromino L: " << std::endl;
+    show(tetrominoL);
+
 }
-
-
 
 

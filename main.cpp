@@ -21,16 +21,21 @@ int main(int argc, char* argv[])
         }
         std::cout << isGrid10x10(argv[1]) << std::endl;
         myfile.close();
-    }    
+    } 
+    //if file is not found, exit with error message   
     else {
         std::cerr << "Error: no file" << std::endl;
         exit(1);
     }
     
+    //next, check that a file is a valid puzzle
     std::cout << isGridcharlegal(g1) << std::endl;
 
+    //if a puzzle is valid, begin solving OR checking solutions
     defineFreebies();
 
+
+    //lastly, output the vector of the solution if found
     std::cout << "Output of vector: " << std::endl;
     for (auto i = g1.begin(); i != g1.end(); i++)
 
