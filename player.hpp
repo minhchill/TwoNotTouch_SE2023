@@ -46,3 +46,24 @@ public:
         containers.clear();
     }
 
+
+// Function to verify the condition of having 2 stars in both a a row and a column
+    bool verifyTwoStarsInRowAndColumn() {
+        for (int x = 0; x < 10; x++) {
+            int starsInRow = 0;
+            int starsInColumn = 0;
+            for (int y = 0; y < 10; y++) {
+                if (grid[x][y].hasStar) {
+                    starsInRow++;
+                }
+                if (grid[y][x].hasStar) {
+                    starsInColumn++;
+                }
+            }
+            if (starsInRow == 2 && starsInColumn == 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
