@@ -22,3 +22,27 @@ public:
         : x(x), y(y), container(container), accessible(true), hasStar(false) {}
 };
 
+class Container {
+public:
+    Shape shape;
+    std::vector<Cell> cells;
+    int starCount;
+
+    Container(Shape shape)
+        : shape(shape), starCount(0) {}
+};
+
+
+class Player {
+private:
+    std::vector<Container> containers;
+    std::vector<std::vector<Cell>> grid;
+    std::map<int, int> containerCounts;
+
+public:
+    Player() {
+        // Initialize grid and containers here
+        grid.resize(10, std::vector<Cell>(10, Cell(-1, -1, -1)));
+        containers.clear();
+    }
+
