@@ -67,3 +67,13 @@ public:
         return false;
     }
 
+
+// Need more work on this one
+    // Function to verify the solution from a file
+    bool verifySolutionFromFile(const std::string& filename) {
+        std::ifstream file(filename);
+        if (!file.is_open()) {
+            std::cerr << "Failed to open the file: " << filename << std::endl;
+            return false;
+        }
+
