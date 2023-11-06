@@ -3,72 +3,104 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <iostream>
 #include <fstream>
+#include <map>
 
 #include "manager.hpp"
 
 
 // // Take a 10 x 10 grid with certain criteria as input and pass them into a list of vectors
-// main driver
 
 // // Pass that list of vectors into a list of sets to represent an irregular region
-std::vector<std::string> setRegions(const ){
-    std::vector<std::string> regions;
-    return regions;
-}
-
-// // Check if 2 lower case letters (for 2 stars) are presented in a row or column (H)
-// bool has2LowerCase(){
-    
+// std::vector<std::string> setRegions(const ){
+//     std::vector<std::string> regions;
+//     return regions;
 // }
 
-// // Check if 2 lower case letters are presented in a bounded region (H)
-// bool 
 
-// // Correct solution 
-// bool isCorrectSolution() {
-//     return true;
-// }
+// Check if 2 lower case letters (for 2 stars) are presented in a row
+bool has2LowerCaseRow(const std::vector<std::string>& puzzle) {
+    for (const std::string& row : puzzle) {
+        int lowercaseCount = 0; // Initialize the count of lowercase letters to 0
 
-// Driver test
-int main()
-{
-    std::ifstream puzzle ("testfilesolution.txt");
-    std::string mystring;
+        // Iterate through each character in the row
+        for (char c : row) {
+            if (std::islower(c)) {
+                lowercaseCount++;
+                if (lowercaseCount == 2) {
+                    break; // No need to continue checking if we already found 2 lowercase letters
+                }
+            }
+        }
 
-    if (puzzle.is_open()){
-        puzzle >> mystring;
-        std::cout << mystring;
+        // Check if the row contains exactly 2 lowercase letters
+        if (lowercaseCount != 2) {
+            return false; // If not, return false
+        }
     }
 
+    // If all rows contain exactly 2 lowercase letters, return true
+    return true;
 }
 
-// Driver
-// int main()
-// {
-//     //open file, read contents to get puzzle
-//     std::ifstream puzzle;
-//     std::string line;
-//     puzzle.open("testfilesolution.txt");
-//     std::vector<std::string> g1;
+// Check if 2 lower case letters (for 2 stars) are presented in a column
+bool has2LowerCaseColumn(const std::vector<std::string>& puzzle) {
+    int rowCount = puzzle.size();
+    int colCount = puzzle[0].size(); // Assuming all rows have the same length
 
-//     if (puzzle.is_open()) {
-//         while (std::getline(puzzle, line)) {
-//             //std::cout << line << '\n';
-//             g1.push_back(line);
-//         }
-//         puzzle.close();
-//     }    
+    for (int col = 0; col < colCount; col++) {
+        int lowercaseCount = 0; // Initialize the count for lowercase letters in the current column
 
-//     std::cout << isGridcharlegal(g1) << std::endl;
+        for (int row = 0; row < rowCount; row++) {
+            char c = puzzle[row][col]; // Get the character in the current column and row
 
-//     std::cout << "Output of vector: " << std::endl;
-//     for (auto i = g1.begin(); i != g1.end(); i++)
+            if (std::islower(c)) {
+                lowercaseCount++;
+                if (lowercaseCount == 2) {
+                    break; // No need to continue checking if we already found 2 lowercase letters
+                }
+            }
+        }
 
-//         std::cout << *i << std::endl;
+        if (lowercaseCount != 2) {
+            return false; // If the column doesn't contain exactly 2 lowercase letters, return false
+        }
+    }
 
-//     std::cout << std::endl;
-//     return 0;
+    return true; // If all columns contain exactly 2 lowercase letters, return true
+}
 
-// }
+//
+
+int main(int argc, char* argv[]) {
+    // Open file, read contents to get the puzzle
+    std::ifstream myfile;
+    std::string line;
+    myfile.open(argv[1]);
+    std::vector<std::string> g1;
+
+    if (myfile.is_open()) {
+        while (std::getline(myfile, line)) {
+            g1.push_back(line);
+        }
+        myfile.close();
+    } else {
+        std::cerr << "Error: No file" << std::endl;
+        return 1; // Use "return 1" instead of "exit(1)" to gracefully exit the program
+    }
+
+    if (has2LowerCaseRow(g1)) {
+        std::cout << "The puzzle has 2 lowercase letters in each row." << std::endl;
+    } else {
+        std::cout << "The puzzle does not have 2 lowercase letters in each row." << std::endl;
+    }
+
+    if (has2LowerCaseColumn(g1)) {
+        std::cout << "The puzzle has 2 lowercase letters in each column." << std::endl;
+    } else {
+        std::cout << "The puzzle does not have 2 lowercase letters in each column." << std::endl;
+    }
+
+
+    return 0;
+}

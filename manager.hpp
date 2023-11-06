@@ -4,17 +4,6 @@
 #include <string>
 #include <map>
 
-/* Methods to have:
-loadGrid(filename): Read the input text file, which contains the initial puzzle grid, and populate the game grid based on file content.
-isGrid10x10(): check if grid is 10 x 10
-isGridCharLegal(): return error if the grid has different than 10 unique lowercase letters.
-isLegalRegion(): check for regions with a hanging letter and return error in that case
-isLegalGrid(): check if a given puzzle is solvable; parent of isGrid10x10(), isGridCharLegal(), isLegalRegion()
-
-isLegalPlacement(x, y, isStar): Given the coordinates (x, y) and whether you want to place a star or a cross, this method should check if the placement follows the game rules (maximum 2 stars in each row, column, and bounded region).
-isPuzzleSolved(): Check if the puzzle is solved, meaning all the rules are met and the puzzle is complete.
-*/
-
 //placeholder until using class Cell
 struct placeholderCell {
     int x;
@@ -56,26 +45,29 @@ bool isGrid10x10(const std::string& filename) {
         //check the last row first because this solution is dumb
         std::string& lastRow = grid[9];
         if (lastRow.length() == 11) {
-            std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
+            std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file (1)" << std::endl;
             return false;
         }
         
         //for debug
-        //cout << row.length() << endl;
+        std::cout << row.length() << std::endl;
 
         //since last row is the correct size we can check the other rows
+        /*
         if  (row.length() != 11) {
             if (acc != grid.size()) {
-                std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
+                std::cout << acc << std::endl;
+                std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file (3)" << std::endl;
                 return false;
             }
             else {
                 if (acc == grid.size() && lastRow.length() != 10) {
-                    std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file" << std::endl;
+                    std::cerr << "Error: Grid does not have 10 columns in some rows. Submit another file (2)" << std::endl;
                     return false;
                 }
             }
         }
+        */
         acc++;
     }
 

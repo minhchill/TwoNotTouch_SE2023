@@ -5,6 +5,7 @@
 
 #include "manager.hpp"
 //#include "player.hpp"
+//#include "verifier.cpp"
 
 int main(int argc, char* argv[])
 {  
