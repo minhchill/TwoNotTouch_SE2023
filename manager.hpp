@@ -97,22 +97,6 @@ bool isGridcharlegal(const std::vector<std::string>& grid) {
     return true;
 }
 
-void isLegalRegion() {
-    std::cout << "Hey there" << std::endl;
-}
-
-void isLegalGrid() {
-    std::cout << "Yo Legit" << std::endl;
-}
-
-void isLegalPlacement(int x, int y, bool isStar) {
-
-}
-
-void isPuzzleSolved() {
-    
-}
-
 //to place stars
 char change_case(char c) {
     if (std::isupper(c)) 
