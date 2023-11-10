@@ -27,7 +27,8 @@ manager:
 
 
 solver:
-
+* Defines classes for solving the puzzle, including Cell, Shape, Container, and Player.
+* solvePuzzle, starPlacing, inaccessibleMarking, and toSolveorVerify // still in progress 
 
 
 verifier:
