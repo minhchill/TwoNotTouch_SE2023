@@ -1,3 +1,5 @@
+// THIS MODULE IS REPONSIBLE FOR KEEPING TRACK OF THE GAME'S LOGIC
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -75,39 +77,12 @@ bool isGrid10x10(const std::string& filename) {
     return true;
 }
 
-// Some rename needed, maybe loadGrid is more appropriate which is up there
-bool isGridcharlegal(const std::vector<std::string>& grid) {
-    std::map<char, int> map;
-    for (const std::string& row : grid) {
-
-        for (const char& i : row) {
-            if (i != '\n') {
-                map[i]++;
-            }
-        }
-    }
-    // Get an iterator pointing to the first element in the map
-    std::map<char, int>::iterator it = map.begin();
- 
-    // Iterate through the map and print the elements
-    while (it != map.end()) {
-        std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
-        ++it;
-    }
-    return true;
-}
-
 //to place stars
 char change_case(char c) {
     if (std::isupper(c)) 
         return std::tolower(c); 
     else
         return std::toupper(c); 
-}
-
-void placeStar(int x, int y, std::vector<std::string>& grid) {
-    //std::cout << grid[x][y] << std::endl;
-    grid[x][y] = change_case(grid[x][y]);
 }
 
 //overload operator to output vector
@@ -122,6 +97,63 @@ void show(const T& container) {
         std::cout<<item<<std::endl;
     }
 }
+
+// Some rename needed, maybe loadGrid is more appropriate which is up there
+bool isGridcharlegal(std::vector<std::string>& grid) {
+    std::map<char, int> map;
+    std::map<char, placeholderCell> coords;
+    
+    auto placeholderGrid = grid;
+    int acc = 0;
+
+    for (std::string& row : placeholderGrid) {
+        std::string::iterator it = row.begin();
+
+        for (auto it = row.begin(); it < row.end(); ++it) {
+
+            if (*it != '\n') {
+                if (islower(*it)) {
+                    change_case(*it);
+                }
+
+                placeholderCell newCell;
+                newCell.x = std::distance(row.begin(), it);
+                std::cout << *it << std::endl;
+                newCell.y = acc;
+                coords[*it] = newCell;
+                
+            }
+        }
+        acc++;
+    }
+    // Get an iterator pointing to the first element in the map
+    //std::map<char, int>::iterator it = map.begin();
+    /*
+    // Iterate through the map and print the elements
+    while (it != map.end()) {
+        std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+        ++it;
+    }
+    */
+    std::map<char, placeholderCell>::iterator it;
+
+    while (it != coords.end()) {
+        std::cout << "Key: " << it->first << std::endl;
+        it++;
+    }
+
+    return true;
+}
+
+// saving coordinates as a new vector, and check if they are adjacent to each other, return true for yes, return false
+
+
+void placeStar(int x, int y, std::vector<std::string>& grid) {
+    //std::cout << grid[x][y] << std::endl;
+    grid[x][y] = change_case(grid[x][y]);
+}
+
+
 
 /*
 //use this to get shapes of given text input
@@ -165,7 +197,7 @@ std::vector<std::vector<placeholderCell>> getShapes(std::vector<std::string>& gr
     return shapes;
 }
 */
-
+/*
 void defineFreebies() {
     //three strip
     std::vector<placeholderCell> threeStrip;
@@ -214,4 +246,4 @@ void defineFreebies() {
 
 }
 
-
+*/

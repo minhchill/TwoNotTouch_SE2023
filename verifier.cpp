@@ -70,24 +70,6 @@ bool has2LowerCaseColumn(const std::vector<std::string>& puzzle) {
     return true; // If all columns contain exactly 2 lowercase letters, return true
 }
 
-// Check if 2 lower case letters are presented in a region. IOW, check for 2 of each unique characters
-// Method 1: Count all lower cases and put them in a set. If not equal 20, return false. Else, parse if the set has exactly 2 of each unique character (5 pairs of 2). Condition met, return true. Else, return false.
-// Method 2: Declare a counter for each character. Iterate through the text file. While !lowercase(x) != 2, keep looking. If reach the end of the file with a total !=2, return false. Else, return true.
-// for M2, i can write a function to count 2 for any character input, which creates a template out of the counter.
-
-// int count2Char(const std::vector<std::string>& puzzle) {
-//     int charCounter = 0;
-//     int rowCount = puzzle.size();
-//     int colCount = puzzle[0].size(); // 10 x 10
-//     for (int col = 0; col < colCount; col++) {
-
-//     }
-// }
-
-// bool has2perRegion(const std::vector<std::string>& puzzle) {
-    
-
-// }
 
 int main(int argc, char* argv[]) {
     // Open file, read contents to get the puzzle

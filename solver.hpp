@@ -3,13 +3,6 @@
 #include <map>
 
 
-// Minh: IMPLEMENTATION IDEA
-// solvePuzzle(): Implement the algorithm to solve the puzzle. Parent method of starPlacing() and inaccessibleMarking()
-// starPlacing(): Using all strategies to place each of the two stars
-// inaccessibleMarking(): Using all strategies to determine inaccessible spots
-// toSolveorVerify(): Call the isPuzzleSolved() from manager continuously. 
-
-
 class Cell {
 public:
     int x;
@@ -95,19 +88,43 @@ public:
                 }
             }
 
-        if (lowercaseCount != 2) {
-            return false; // If the column doesn't contain exactly 2 lowercase letters, return false
+            if (lowercaseCount != 2) {
+                return false; // If the column doesn't contain exactly 2 lowercase letters, return false
+            }
         }
-    }
     return true; // If all columns contain exactly 2 lowercase letters, return true
     }
+    
+    // My current approach is to create a sub function with return type int to count an input character. 
+    // I then use that function to count for each given input from a to j in the bigger boolean function 
+    // with the prototype: bool has2perRegion(const std::vector<std::string>& puzzle).
 
+    // subfunction to count the number of a given lowercase in a puzzle
+    // int countCharacterInRegion(char x, const std::vector<std::string>& puzzle, char regionChar) {
+    //     int count = 0;
 
+    //     for (const std::string& row : puzzle) {
+    //         for (char c : row) {
+    //             if (c == x && regionChar == /* logic to identify the region */) {
+    //                 count++;
+    //                 if (count == 2) {
+    //                     return count;
+    //                 }
+    //             }
+    //         }
+    //     }
 
-    // Need more work on this one
-    // Function to verify the solution from a file
+    //     return count;
+    // }
 
-    bool verifySolutionFromFile(const std::string& filename) {
-        return true;
-    }
+    // bool has2perRegion(const std::vector<std::string>& puzzle) {
+    //     for (char regionChar = 'a'; regionChar <= 'j'; regionChar++) {
+    //         int count = countCharacterInRegion(/*character to count*/, puzzle, regionChar);
+    //         if (count != 2) {
+    //             return false; // If any region doesn't have 2 occurrences of the character, return false
+    //         }
+    //     }
+
+    //     return true; // If all regions have 2 occurrences, return true
+    // }
 };

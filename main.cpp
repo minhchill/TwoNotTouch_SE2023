@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
     //if a puzzle is valid, begin solving OR checking solutions
     //defineFreebies();
 
-
+    
     //lastly, output the vector of the solution if found
     std::cout << "Output of vector: " << std::endl;
     for (auto i = g1.begin(); i != g1.end(); i++)
