@@ -4,7 +4,7 @@
 #include <fstream>
 
 #include "manager.hpp"
-//#include "player.hpp"
+//#include "solver.hpp"
 //#include "verifier.cpp"
 
 int main(int argc, char* argv[])
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
     std::cout << isGridcharlegal(g1) << std::endl;
 
     //if a puzzle is valid, begin solving OR checking solutions
-    defineFreebies();
+    //defineFreebies();
 
 
     //lastly, output the vector of the solution if found
