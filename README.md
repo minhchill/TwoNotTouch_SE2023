@@ -1,4 +1,4 @@
-1. Introduction //
+1. Introduction:
 Two Not Touch Game is a logic puzzle where you have to arrange stars in a grid, usually square shaped grids. The objective is to arrange the stars in each row, column, and area of the divided grid in accordance with predetermined guidelines.
 There may be different rules, but generally speaking, there should be a certain amount of stars in each row and column, and no two stars should be in the same row, column, or area. The task is to figure out where the stars should go based on the hints given.
 The goal of the Star Battle puzzle is to satisfy every requirement by constructing a solution that fills the full grid with stars in accordance with the regulations
@@ -21,6 +21,9 @@ Winning :
 
 
 manager: 
+* Contains functions for loading the puzzle, checking if it's a 10x10 grid, and verifying if the characters in the grid are legal.
+* Defines various shapes and freebies for the puzzle.
+* Provides some utility functions for output and manipulation of data.
 
 
 solver:
