@@ -16,8 +16,7 @@ Winning :
 5- Full Reporting:There must be a star or an empty cell covering every cell in the grid. No cells should be left exposed.
 
 
-
-3. Class Documentation:
+2. Class Documentation:
 
 
 manager: 
