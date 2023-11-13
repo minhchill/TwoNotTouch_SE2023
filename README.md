@@ -32,6 +32,8 @@ solver:
 
 
 verifier:
+* Contains functions to verify if a puzzle has the required characters (stars) in its rows and columns.
+* Also includes some commented-out code in progress.
 
 
 main.cpp:
