@@ -47,4 +47,15 @@ The main entry point of the program.
 It reads a puzzle from a file, checks its validity, and prints out the content.
 Calls functions from manager.hpp to check if the grid is a 10x10 grid and if it's legal.
 
+2. Installation
+* Environment requirements: Visual Studio Code, C++ extension packages G++ compiler
+* Step 1: Download the ZIP file on the main branch and extract it
+* Step 2: Open the folder in VS Code and ensure there is no syntactical bugs
+* Step 3: Run the following commands:
+g++ -o main.exe main.cpp
+./main.exe [test file]
 
+3. Understanding the program
+* So far, the working software takes a solved puzzle as an input and has two key functionalities:
+* * Print out the puzzle and list out the number of the irregular regions that can be solved strategically
+* * Check if each column/row/region has 2 lower-case letters (representing the stars). If the solved puzzle satisfies the above requirements, then the program returns the message
