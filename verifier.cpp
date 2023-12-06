@@ -6,7 +6,7 @@
 #include <fstream>
 #include <map>
 
-#include "manager.hpp"
+// #include "manager.hpp"
 
 
 // // Take a 10 x 10 grid with certain criteria as input and pass them into a list of vectors
@@ -72,35 +72,35 @@ bool has2LowerCaseColumn(const std::vector<std::string>& puzzle) {
 
 //
 
-int main(int argc, char* argv[]) {
-    // Open file, read contents to get the puzzle
-    std::ifstream myfile;
-    std::string line;
-    myfile.open(argv[1]);
-    std::vector<std::string> g1;
+// int main(int argc, char* argv[]) {
+//     // Open file, read contents to get the puzzle
+//     std::ifstream myfile;
+//     std::string line;
+//     myfile.open(argv[1]);
+//     std::vector<std::string> g1;
 
-    if (myfile.is_open()) {
-        while (std::getline(myfile, line)) {
-            g1.push_back(line);
-        }
-        myfile.close();
-    } else {
-        std::cerr << "Error: No file" << std::endl;
-        return 1; // Use "return 1" instead of "exit(1)" to gracefully exit the program
-    }
+//     if (myfile.is_open()) {
+//         while (std::getline(myfile, line)) {
+//             g1.push_back(line);
+//         }
+//         myfile.close();
+//     } else {
+//         std::cerr << "Error: No file" << std::endl;
+//         return 1; // Use "return 1" instead of "exit(1)" to gracefully exit the program
+//     }
 
-    if (has2LowerCaseRow(g1)) {
-        std::cout << "The puzzle has 2 lowercase letters in each row." << std::endl;
-    } else {
-        std::cout << "The puzzle does not have 2 lowercase letters in each row." << std::endl;
-    }
+//     if (has2LowerCaseRow(g1)) {
+//         std::cout << "The puzzle has 2 lowercase letters in each row." << std::endl;
+//     } else {
+//         std::cout << "The puzzle does not have 2 lowercase letters in each row." << std::endl;
+//     }
 
-    if (has2LowerCaseColumn(g1)) {
-        std::cout << "The puzzle has 2 lowercase letters in each column." << std::endl;
-    } else {
-        std::cout << "The puzzle does not have 2 lowercase letters in each column." << std::endl;
-    }
+//     if (has2LowerCaseColumn(g1)) {
+//         std::cout << "The puzzle has 2 lowercase letters in each column." << std::endl;
+//     } else {
+//         std::cout << "The puzzle does not have 2 lowercase letters in each column." << std::endl;
+//     }
 
 
-    return 0;
-}
+//     return 0;
+// }

@@ -5,7 +5,7 @@
 
 #include "manager.hpp"
 //#include "solver.hpp"
-//#include "verifier.cpp"
+#include "verifier.cpp"
 
 int main(int argc, char* argv[])
 {  
@@ -43,5 +43,18 @@ int main(int argc, char* argv[])
         std::cout << *i << std::endl;
 
     std::cout << std::endl;
+
+    if (has2LowerCaseRow(g1)) {
+        std::cout << "The puzzle has 2 lowercase letters in each row." << std::endl;
+    } else {
+        std::cout << "The puzzle does not have 2 lowercase letters in each row." << std::endl;
+    }
+
+    if (has2LowerCaseColumn(g1)) {
+        std::cout << "The puzzle has 2 lowercase letters in each column." << std::endl;
+    } else {
+        std::cout << "The puzzle does not have 2 lowercase letters in each column." << std::endl;
+    }
+
     return 0;
 }
